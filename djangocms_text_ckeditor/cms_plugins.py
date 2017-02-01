@@ -473,12 +473,12 @@ class TextPlugin(CMSPluginBase):
         return signer.sign(plugin_id)
 
     def _get_plugin_or_404(self, pk):
-        plugin_type = self.__class__.__name__
+#         plugin_type = self.__class__.__name__
         plugins = (
             CMSPlugin
             .objects
             .select_related('placeholder', 'parent')
-            .filter(plugin_type=plugin_type)
+#            .filter(plugin_type=plugin_type)
         )
 
         field = self.model._meta.pk
